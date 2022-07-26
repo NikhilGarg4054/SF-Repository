@@ -1,0 +1,48 @@
+<template>
+    <!--lightning-card title="Select Object" class="slds-var-m-around_medium">
+        <div class="slds-var-m-around_medium">
+            <select onchange={handlechange}>
+                <option value="Select">Select</option>
+                <template for:each={options} for:item="op">
+                    <option key={op.label} value={op.value} class="uiInputSelectOption">{op.value}</option>
+                </template>
+            </select>
+        </div>
+    </lightning-card>
+    <div class="slds-var-m-around_large">
+        <lightning-button label="Select List View" onclick={handleclick}></lightning-button>
+    </div-->
+    <!--template for:each={res.data} for:item="r">
+        <p key={r.Name}>{r.name}</p>
+    </template-->
+    <lightning-progress-indicator current-step={stage} type="path" variant="base" >
+        <template for:each={steps} for:item="step">
+            <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+        </template>
+    </lightning-progress-indicator>
+    <label class="slds-form-element__label">
+        <span class="">Select Object</span>
+    </label>
+    <select class="slds-select" onchange={handleObject}>
+                    <option value="Select">Select</option>
+                    <template for:each={allObject.data} for:item="option">
+                        <option key={option.QualifiedApiName} class="uiInputSelectOption" value={option.QualifiedApiName}>{option.QualifiedApiName}</option>
+                    </template>
+                </select>
+                <div class="slds-var-m-around_large">
+                    <lightning-button label="Select List View" onclick={handleclickObject}></lightning-button>
+                </div>
+                <template if:true={render}>
+                <div style="height: 300px;">
+                <!--lightning-datatable key-field="id" columns={} data={res.data}></lightning-datatable-->
+                
+                <select class="slds-var-m-around_medium" onchange={handleListView}>
+                    <option value="Select">Select</option>
+                    <template for:each={results.data} for:item="d">
+                        <option value={d} key={d} class="uiInputSelectOption">{d}</option>
+                    </template>
+                </select>
+
+            </div>
+        </template>
+</template>
