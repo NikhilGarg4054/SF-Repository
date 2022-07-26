@@ -1,0 +1,8 @@
+<template>
+    <ul class="slds-has-dividers_around-space dropZone" style="height:70vh; overflow-y:auto;" ondrop={handleitemDrop}
+             ondragover={handleDragOver} >
+        <template for:each={records} for:item="r">
+            <c-Kanban-Drop-Down-Card stage={stage} key={r.Id} record={r} onitemdrag={handledrag}></c-Kanban-Drop-Down-Card>
+        </template>
+    </ul>
+</template>

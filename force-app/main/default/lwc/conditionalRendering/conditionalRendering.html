@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Rendering conditionally" >
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="checkbox" label="enter" onchange={handlechange}></lightning-input>
+            <template if:true={checkvar}>
+                <p> Hey Hi </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

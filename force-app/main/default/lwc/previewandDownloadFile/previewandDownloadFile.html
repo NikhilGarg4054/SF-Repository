@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Document Preview and Download">
+        <!--template if:true={filelist}-->
+            <template for:each={filelist} for:item="file">
+                <div key={file.value} class="slds-box">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                            <p><strong> FileName- </strong> {file.label}</p>
+                        </div>
+                        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                            <a href={file.url} download> Download </a> 
+
+                        </div>
+                        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                            <lightning-button variant="brand" onclick={handlePreview} data-id={file.value} label="Preview"></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        <!--/template-->
+    </lightning-card>
+</template>

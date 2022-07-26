@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Send Emails" icon-name="utility:alert">
+         <lightning-progress-indicator current-step={stage} type="path" variant="base" >
+             <template for:each={steps} for:item="step">
+                 <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+             </template>
+         </lightning-progress-indicator>
+         <label class="slds-form-element__label">
+             <span class="">Select Object</span>
+         </label>
+         <select class="slds-select" onchange={handleObjectChange}><!-- List of sObjects from apex-->
+             <option value="Select">Select</option>
+             <template for:each={allObject.data} for:item="option">
+                 <option key={option.QualifiedApiName} class="uiInputSelectOption" value={option.QualifiedApiName}>{option.QualifiedApiName}</option>
+             </template>
+         </select>
+         <template if:true={renderListView}><!--List of List View-->
+             <div style="height: 300px;">
+                 <label class="slds-form-element__label">
+                     <span class="">Select List View of the object</span>
+                 </label>
+                 <select class="slds-var-m-around_medium" onchange={handleListViewChange}>
+                     <option value="Select">Select</option>
+                         <template for:each={results.data} for:item="d">
+                             <option value={d} key={d} class="uiInputSelectOption">{d}</option>
+                         </template>
+                 </select>
+                <lightning-button label="Click Me"  onclick={handleRecordSelect}>
+                </lightning-button>
+                 <template if:true={calloutRecord.data}>
+                    <div class="slds-form-element__label">
+                        <lightning-datatable data={calloutRecord.data} key-field="Id" columns={cols}>
+                        </lightning-datatable>
+                   </div>
+               </template>
+             </div>
+        </template>
+    </lightning-card>
+ </template>

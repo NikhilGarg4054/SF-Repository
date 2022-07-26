@@ -1,0 +1,20 @@
+<template>
+    <div style="background-color:white"> Project Tickets </div>
+    <div class="card_wrapper" style=" padding: 0.5px;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;">
+        <template for:each={pickvals} for:item="val">
+            <div class="stageContainer" key={val} style={widthcal}>
+                <h1 class="column_heading" style=" background: #005fb2;
+                padding: 0.5px 0.25px;
+                font-size: 16px;
+                color: #fff;
+                margin-bottom: 1px;">{val}</h1>
+                <c-Kanban-View-List records={recordData} stage={val} onitemdrag2={handleListItemDrag} onitemdrop={handleItemDrop}></c-Kanban-View-List>
+            </div>
+ 
+        </template>
+
+    </div>
+</template>

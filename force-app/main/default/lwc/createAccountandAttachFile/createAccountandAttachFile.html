@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Enter Account Details">
+        <lightning-record-edit-form object-api-name="Account">
+            <lightning-input-field field-name="Name" class="c1"></lightning-input-field>
+            <lightning-input-field field-name="Type" class="c2"></lightning-input-field>
+            
+            <lightning-card title="Add Attachment" icon-name="custom:custom19">
+                <lightning-input name="files" type="File" onchange={handlechange} label="File Input" ></lightning-input>
+                <!--lightning-file-upload label="Upload File to Attach" accept=".xlsx, .xls, .csv, .png, .doc, .docx, .pdf"
+                        record-id={userId}
+                        onuploadfinished={handleUploadFinished}
+                        multiple></lightning-file-upload-->
+                    </lightning-card>
+       <lightning-button  label="Create Account" onclick={handleCreate} ></lightning-button>
+       
+        </lightning-record-edit-form>
+        </lightning-card>
+    <div></div>
+</template>
+

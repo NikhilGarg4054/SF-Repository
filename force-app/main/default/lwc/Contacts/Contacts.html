@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Create Related Contact">
+        <lightning-record-edit-form object-api-name="Contact">
+           <lightning-input-field field-name="LastName" value="" class="inp1"></lightning-input-field>
+           <lightning-input-field field-name="Email" value="" class="inp2"></lightning-input-field>
+           <lightning-input-field field-name="Birthdate" value="" class="inp3"></lightning-input-field>
+           <lightning-input-field field-name="Phone" value="" class="inp4"></lightning-input-field>
+           <lightning-button type="submit" label="create" variant="Success" onclick={handleclick}></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

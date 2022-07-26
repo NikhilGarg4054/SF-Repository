@@ -1,0 +1,71 @@
+<template>
+    <header class="slds-global-header_container branding-header slds-no-print oneHeader" id="oneHeader"
+            data-aura-rendered-by="378:80;a" data-aura-class="oneHeader">
+            <div data-aura-rendered-by="385:80;a" class="oneSystemMessage" data-aura-class="oneSystemMessage">
+            </div>
+            <div class="slds-global-header slds-grid slds-grid--align-spread" style="height: 97px">
+                <div class="slds-global-header__item" data-aura-rendered-by="391:80;a">
+
+                    <img src={Banner} alt="banner Image"
+                        style="-ms-interpolation-mode:bicubic;border:none;max-width:100%;outline:none;width: 100px;vertical-align: bottom;"
+                        width="32" />
+                </div>
+                <div class="slds-text-heading_small slds-p-right_small"> Welcome <b>{name}</b> </div>
+            </div>
+
+            <div class="bBottom">
+
+            </div>
+        </header>
+<!-- div-->
+        <div class="demo-only no-gutters" style="display:flex;width:16rem;height:37.5rem">
+            <div class="slds-split-view_container slds-is-open" style="position:relative;z-index:199;">
+                <button
+                    class="slds-button slds-button_icon slds-button_icon slds-split-view__toggle-button slds-is-open"
+                    aria-controls="split-view-id" aria-expanded="true" title="Close Split View">
+                    <svg class="slds-button__icon slds-button__icon_x-small" aria-hidden="true">
+                        <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#left"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Close Split View</span>
+                </button>
+                <article aria-hidden="false" id="split-view-id"
+                    class="slds-split-view slds-grid slds-grid_vertical slds-grow">
+
+                    <div class="slds-grid slds-grid_vertical">
+                        <div class="slds-split-view__list-header slds-grid">
+                            <span>Time Sheet
+                                <svg class="slds-icon slds-icon_xx-small slds-icon-text-default slds-align-top"
+                                    aria-hidden="true">
+                                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown">
+                                    </use>
+                                </svg>
+                            </span>
+                        </div>
+
+                        <ul aria-describedby="entity-header">
+                            <li class="slds-nav-vertical__item slds-is-active">
+                                <a href="javascript:void(0);" class="slds-nav-vertical__action"
+                                    onclick={handleSelect} aria-current="true" name="One">01/06/2020 to
+                                    1/19/2020</a>
+                            </li>
+                            <li class="slds-nav-vertical__item ">
+                                <a href="javascript:void(0);" class="slds-nav-vertical__action"
+                                    onclick={handleSelect} aria-current="true" name="two">01/06/2020 to
+                                    1/19/2020</a>
+                            </li>
+                            <li class="slds-nav-vertical__item  ">
+                                <a href="javascript:void(0);" class="slds-nav-vertical__action"
+                                    onclick={handleSelect} aria-current="true" name="three">01/06/2020 to
+                                    1/19/2020</a>
+                            </li>
+                            <li class="slds-nav-vertical__item ">
+                                <a href="javascript:void(0);" class="slds-nav-vertical__action"
+                                    onclick={handleSelect} aria-current="true" name="four">01/06/2020 to
+                                    1/19/2020</a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+</template>

@@ -1,0 +1,41 @@
+<template>
+    <template if:true={isStageName}>
+    <li class="slds-item slds-m-around_small" draggable="true" ondragstart={itemdragStart} style="border: 2px solid #d8dde6;
+    padding: 0.45rem;
+    margin: 0.25rem;
+    border-radius: 0.25rem;
+    background-clip: border-box;">
+        <article class="slds-title slds-title-board">
+            <h3 class="slds-truncate" title={record.Name}>
+                <a href="#" data-target-id={record.Id} onclick={handleClick}>
+                    <span class="slds-truncate" data-target-id={record.Id}>
+                        {record.Name}
+                    </span>
+                </a>
+            </h3>
+            <div class="slds-item_detail slds-text-body_small" >
+                <!--p class="slds-text-heading_small"> Amount :${record.Amount}</p-->
+                <p class="slds-text-heading_small"> Hours :{record.Hours}</p>
+                <!--p class="slds-truncate" title={record.AccountName}>
+                    <a href="#" data-id={record.AccountId} onclick={handleAccountId}>
+                        <span class="slds-truncate" data-id={record.AccountId}>
+                            {record.AccountName}
+                        </span>
+                    </a>
+                </p-->
+                
+                <p class="slds-truncate" title={record.ProjectName}>
+                    Project:
+                    <a href="#" data-target-id={record.ProjectId} onclick={handleAccountId}>
+                        <span class="slds-truncate" data-target-id={record.ProjectId}>
+                             {record.ProjectName}
+                        </span>
+                    </a>
+                </p>
+                <!--p class="slds-truncate" title={record.CloseDate}>CloseDate: ${record.CloseDate}</p-->
+                <p class="slds-truncate" title={record.Status__c}>Status: {record.Status__c}</p>
+            </div>
+        </article>
+    </li>
+</template>
+</template>

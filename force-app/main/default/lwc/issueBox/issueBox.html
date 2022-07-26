@@ -1,0 +1,28 @@
+<template>
+    <div class="slds-card" >
+    <lightning-card title="Raise Your Issue" class="slds-var-m-around_medium">
+        <lightning-record-edit-form object-api-name="Issue__c" >
+            <lightning-input-field field-name="Name" class="inp" value="" ></lightning-input-field>
+            <lightning-input-field field-name="Priority__c" class="inp2" value=""></lightning-input-field>
+            <lightning-input-field field-name="Status__c" class="inp3" value=""></lightning-input-field>
+            <lightning-input-field field-name="Type__c" class="inp8" value=""></lightning-input-field>
+            <lightning-input-field field-name="Repro_Step__c" class="inp4" value=""></lightning-input-field>
+            <lightning-input-field field-name="Expected_Result__c" class="inp5" value=""></lightning-input-field>
+            <lightning-input-field field-name="Actual_Result__c" class="inp6" value=""></lightning-input-field>
+            <lightning-input-field field-name="Description__c" class="inp7" value=""></lightning-input-field>
+        </lightning-record-edit-form>
+        <div class="slds-card">
+            <lightning-file-upload
+                label="Add Attachments"
+                name="fileUploader"
+                accept={acceptedFormats}
+                record-id={recordId}
+                onuploadfinished={handleUploadFinished}
+                multiple>
+        </lightning-file-upload>
+        </div>
+        <div class="slds-card">
+        <lightning-button label="Send" variant="Success" onclick={handleclick} ></lightning-button></div>
+    </lightning-card>
+</div>
+</template>

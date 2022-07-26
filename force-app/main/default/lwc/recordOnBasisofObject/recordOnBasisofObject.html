@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Select Objects" >
+        <select onchange={handlechange} class="slds-select" title="Select Object" >
+            <option value="Select"> select </option>
+            <template for:each={objects} for:item="i">
+                <option value={i.value} key={i.value} class="uiInputSelectOption"> {i.value} </option>
+            </template>
+        </select>
+        <template if:true={result}>
+            <div class="slds-form-element__label">
+                <lightning-datatable data={result} key-field="Id" show-row-number-column="true" columns={cols}></lightning-datatable>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

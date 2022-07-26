@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Select Fields You Want To send">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-view-form object-api-name="Opportunity" record-id={recordId}>
+        <lightning-dual-listbox label=" " source-label="Select Fields" selected-label="selected" options={options} onchange={change} ></lightning-dual-listbox>
+    <lightning-button label="send" onclick={handleclick} variant="Success"></lightning-button>   
+</lightning-record-view-form>
+    </div>
+    </lightning-card>
+
+
+
+</template>
